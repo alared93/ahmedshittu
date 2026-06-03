@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ahmed Shittu — Sustainability &amp; Structural Engineering</title>
+<meta name="description" content="Ahmed Shittu — Civil and structural engineer (MSc) working in sustainability, circular materials, and the delivery of energy and infrastructure projects. Based in Germany." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#F6F3EA;
+    --paper-2:#EFEBDD;
+    --ink:#16201B;
+    --ink-soft:#3A463F;
+    --muted:#69736B;
+    --forest:#1E4D3A;
+    --moss:#3F7A55;
+    --clay:#C0612C;
+    --line:rgba(22,32,27,.14);
+    --line-soft:rgba(22,32,27,.08);
+    --font-display:"Fraunces",Georgia,"Times New Roman",serif;
+    --font-body:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --font-mono:"Space Mono","SFMono-Regular",Menlo,Consolas,monospace;
+    --maxw:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font-body);
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  ::selection{background:var(--clay);color:var(--paper)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:var(--clay);
+    display:inline-block;
+  }
+  .num{font-family:var(--font-mono);font-size:13px;color:var(--moss);letter-spacing:.1em}
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(246,243,234,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px}
+  .brand{font-family:var(--font-display);font-weight:600;font-size:20px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--clay);display:inline-block}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:14.5px;color:var(--ink-soft);position:relative;transition:color .2s}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1.5px;background:var(--clay);transition:width .28s ease}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a:hover::after{width:100%}
+  .nav-cta{border:1px solid var(--ink);padding:9px 16px;border-radius:40px;font-size:14px;font-weight:500;transition:all .22s}
+  .nav-cta:hover{background:var(--ink);color:var(--paper)}
+  .burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0;padding:6px}
+  .burger span{width:24px;height:2px;background:var(--ink);transition:.3s}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:96px 0 80px;overflow:hidden}
+  .contours{position:absolute;inset:0;z-index:0;opacity:.5;pointer-events:none}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-grid{display:grid;grid-template-columns:1.55fr .95fr;gap:54px;align-items:end}
+  .hero h1{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-size:clamp(44px,7vw,86px);
+    line-height:.98;
+    letter-spacing:-.02em;
+    margin:22px 0 0;
+  }
+  .hero h1 em{font-style:italic;color:var(--forest)}
+  .hero .lead{font-size:clamp(18px,2.1vw,21px);color:var(--ink-soft);max-width:33ch;margin-top:26px}
+  .hero-cta{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:13px 22px;border-radius:44px;font-weight:600;font-size:15px;
+    transition:transform .2s ease,background .2s,color .2s,box-shadow .2s;
+  }
+  .btn-primary{background:var(--forest);color:var(--paper);box-shadow:0 8px 22px -10px rgba(30,77,58,.7)}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--ink)}
+  .btn-ghost{border:1px solid var(--line);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--ink);transform:translateY(-2px)}
+  .btn .arrow{transition:transform .2s}
+  .btn:hover .arrow{transform:translate(3px,-3px)}
+
+  .facts{border-left:2px solid var(--clay);padding-left:22px;display:flex;flex-direction:column;gap:18px}
+  .fact .k{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .fact .v{font-size:16px;font-weight:500;margin-top:3px;line-height:1.35}
+  .fact .v span{color:var(--moss)}
+
+  /* ---------- SECTION SHELL ---------- */
+  section.block{padding:88px 0;border-top:1px solid var(--line-soft)}
+  .head{display:flex;align-items:baseline;gap:18px;margin-bottom:46px;flex-wrap:wrap}
+  .head h2{font-family:var(--font-display);font-weight:500;font-size:clamp(28px,4vw,42px);letter-spacing:-.015em;line-height:1.05}
+  .head .num{margin-top:6px}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+  .about p{font-size:19px;line-height:1.62;color:var(--ink-soft)}
+  .about p strong{color:var(--ink);font-weight:600}
+  .focus{display:flex;flex-direction:column;gap:16px}
+  .focus-card{background:var(--paper-2);border:1px solid var(--line-soft);border-radius:14px;padding:20px 22px;transition:transform .25s ease,box-shadow .25s}
+  .focus-card:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(22,32,27,.35)}
+  .focus-card h3{font-size:16px;font-weight:700;display:flex;align-items:center;gap:10px}
+  .focus-card h3 .ic{width:9px;height:9px;border-radius:2px;background:var(--moss);transform:rotate(45deg)}
+  .focus-card p{font-size:14.5px;color:var(--muted);margin-top:7px}
+
+  /* ---------- EXPERIENCE ---------- */
+  .xp{display:flex;flex-direction:column}
+  .role{display:grid;grid-template-columns:200px 1fr;gap:36px;padding:30px 0;border-top:1px solid var(--line)}
+  .role:first-child{border-top:0}
+  .role .when{font-family:var(--font-mono);font-size:13px;color:var(--moss);letter-spacing:.03em}
+  .role .org{font-size:14px;color:var(--muted);margin-top:8px}
+  .role h3{font-family:var(--font-display);font-size:23px;font-weight:500;letter-spacing:-.01em}
+  .role ul{list-style:none;margin-top:14px;display:flex;flex-direction:column;gap:9px}
+  .role li{position:relative;padding-left:20px;font-size:15.5px;color:var(--ink-soft)}
+  .role li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border:1.5px solid var(--clay);border-radius:50%}
+
+  /* ---------- WORK / RESEARCH ---------- */
+  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .work-card{
+    position:relative;border:1px solid var(--line);border-radius:16px;padding:26px 26px 24px;
+    background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0));
+    transition:transform .28s ease,border-color .28s,box-shadow .28s;overflow:hidden;
+  }
+  .work-card:hover{transform:translateY(-4px);border-color:var(--moss);box-shadow:0 22px 40px -26px rgba(30,77,58,.6)}
+  .work-card .tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--clay)}
+  .work-card h3{font-family:var(--font-display);font-size:21px;font-weight:500;margin:12px 0 8px;line-height:1.15}
+  .work-card p{font-size:14.5px;color:var(--muted)}
+  .work-card .tools{margin-top:16px;display:flex;flex-wrap:wrap;gap:7px}
+  .chip{font-family:var(--font-mono);font-size:11px;border:1px solid var(--line);border-radius:30px;padding:4px 10px;color:var(--ink-soft)}
+  .work-card .big{position:absolute;right:18px;top:10px;font-family:var(--font-display);font-style:italic;font-size:46px;color:var(--line);line-height:1}
+
+  /* ---------- SKILLS ---------- */
+  .skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 44px}
+  .skill-row{padding:18px 0;border-top:1px solid var(--line-soft)}
+  .skill-row .k{font-family:var(--font-mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);margin-bottom:10px}
+  .skill-row .tags{display:flex;flex-wrap:wrap;gap:8px}
+
+  /* ---------- CREDENTIALS ---------- */
+  .cred-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+  .cred h3.sub{font-family:var(--font-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);margin-bottom:20px}
+  .edu-item,.cert-item{padding:16px 0;border-top:1px solid var(--line-soft)}
+  .edu-item:first-of-type,.cert-item:first-of-type{border-top:0}
+  .edu-item .t,.cert-item .t{font-family:var(--font-display);font-size:19px;font-weight:500}
+  .edu-item .m,.cert-item .m{font-size:14px;color:var(--muted);margin-top:4px}
+  .edu-item .d,.cert-item .d{font-family:var(--font-mono);font-size:12px;color:var(--moss);margin-top:6px}
+  .awards{margin-top:26px;display:flex;flex-direction:column;gap:10px}
+  .award{display:flex;gap:14px;font-size:14.5px;color:var(--ink-soft)}
+  .award .yr{font-family:var(--font-mono);font-size:12px;color:var(--clay);min-width:58px}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--ink);color:var(--paper);border-radius:26px;padding:64px 52px;position:relative;overflow:hidden}
+  .contact .contours{opacity:.16}
+  .contact .eyebrow{color:var(--clay)}
+  .contact h2{font-family:var(--font-display);font-weight:500;font-size:clamp(32px,5vw,56px);line-height:1.02;letter-spacing:-.02em;margin:16px 0 8px;position:relative}
+  .contact h2 em{font-style:italic;color:#9FD2AE}
+  .contact p{color:rgba(246,243,234,.72);max-width:46ch;position:relative}
+  .contact-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;position:relative}
+  .clink{display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(246,243,234,.25);border-radius:44px;padding:13px 22px;font-size:15px;font-weight:500;transition:all .22s}
+  .clink:hover{background:var(--paper);color:var(--ink);transform:translateY(-2px)}
+  .clink.solid{background:var(--clay);border-color:var(--clay);color:var(--paper)}
+  .clink.solid:hover{background:#a9531f}
+
+  footer.foot{padding:38px 0 50px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  footer.foot .fn{font-family:var(--font-display);font-size:18px}
+  footer.foot .fm{font-family:var(--font-mono);font-size:12px;color:var(--muted);letter-spacing:.05em}
+
+  /* ---------- REVEAL ANIM ---------- */
+  [data-reveal]{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)}
+  [data-reveal].in{opacity:1;transform:none}
+  .stagger>*{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .stagger.in>*{opacity:1;transform:none}
+  .stagger.in>*:nth-child(1){transition-delay:.05s}
+  .stagger.in>*:nth-child(2){transition-delay:.13s}
+  .stagger.in>*:nth-child(3){transition-delay:.21s}
+  .stagger.in>*:nth-child(4){transition-delay:.29s}
+  @media (prefers-reduced-motion:reduce){[data-reveal],.stagger>*{opacity:1!important;transform:none!important;transition:none}}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:880px){
+    .hero-grid{grid-template-columns:1fr;gap:40px}
+    .facts{flex-direction:row;flex-wrap:wrap;gap:24px;border-left:0;border-top:2px solid var(--clay);padding-left:0;padding-top:20px}
+    .fact{min-width:42%}
+    .about-grid,.cred-grid{grid-template-columns:1fr;gap:32px}
+    .work-grid,.skill-grid{grid-template-columns:1fr}
+    .role{grid-template-columns:1fr;gap:12px}
+    .nav-links{display:none}
+    .nav-links.open{display:flex;flex-direction:column;position:absolute;top:68px;left:0;right:0;background:var(--paper);padding:22px 28px;gap:18px;border-bottom:1px solid var(--line)}
+    .burger{display:flex}
+    .contact{padding:48px 28px}
+  }
+</style>
+</head>
+<body>
+
+<!-- contour svg motif (reused) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="contourset">
+      <path d="M-50 120 C 200 40, 480 200, 760 110 S 1240 60, 1500 160" fill="none" stroke="#1E4D3A" stroke-width="1"/>
+      <path d="M-50 200 C 220 130, 500 280, 780 190 S 1260 150, 1520 240" fill="none" stroke="#3F7A55" stroke-width="1"/>
+      <path d="M-50 290 C 240 220, 520 360, 800 280 S 1280 240, 1540 330" fill="none" stroke="#1E4D3A" stroke-width="1"/>
+      <path d="M-50 380 C 260 320, 540 450, 820 370 S 1300 330, 1560 420" fill="none" stroke="#3F7A55" stroke-width="1"/>
+      <path d="M-50 470 C 280 410, 560 540, 840 460 S 1320 420, 1580 510" fill="none" stroke="#1E4D3A" stroke-width="1"/>
+    </g>
+  </defs>
+</svg>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top"><span class="dot"></span>Ahmed&nbsp;Shittu</a>
+    <nav class="nav-links" id="navlinks">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#work">Research</a>
+      <a href="#skills">Skills</a>
+      <a href="#credentials">Education</a>
+      <a class="nav-cta" href="#contact">Get in touch</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="contours" viewBox="0 0 1500 560" preserveAspectRatio="xMidYMid slice"><use href="#contourset"/></svg>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="stagger" id="herotext">
+          <span class="eyebrow">Sustainability · Energy &amp; Infrastructure · Engineering</span>
+          <h1>Building toward a<br><em>low-carbon</em> future.</h1>
+          <p class="lead">Civil &amp; structural engineer (MSc) working at the intersection of sustainability, circular materials, and the delivery of energy and infrastructure projects.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="#contact">Get in touch <span class="arrow">↗</span></a>
+            <a class="btn btn-ghost" href="Ahmed_Shittu_CV.pdf" download>Download CV</a>
+          </div>
+        </div>
+        <div class="facts" id="herofacts">
+          <div class="fact"><div class="k">Based in</div><div class="v">Weimar, Germany<br><span>open to relocate</span></div></div>
+          <div class="fact"><div class="k">Education</div><div class="v">MSc Structural Engineering<br><span>Bauhaus-Universität Weimar</span></div></div>
+          <div class="fact"><div class="k">Languages</div><div class="v">English (native)<br>German (B1) · Yoruba</div></div>
+          <div class="fact"><div class="k">Focus</div><div class="v">Circularity · Low-carbon<br>materials · Project delivery</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="head" data-reveal><span class="num">01</span><h2>About</h2></div>
+      <div class="about-grid">
+        <div class="about" data-reveal>
+          <p>I am a civil and structural engineer moving into <strong>sustainability within the energy and infrastructure sector</strong>. My work combines research into low-carbon, circular construction materials with strong analytical, data-handling and reporting skills.</p>
+          <p style="margin-top:20px">I bring a track record of coordinating cross-functional engineering, project-management and commercial teams, a <strong>risk-focused MSc specialization</strong>, and a genuine interest in environmental and social sustainability. Native English speaker with working German and GIS / data-analysis skills.</p>
+        </div>
+        <div class="focus stagger" data-reveal>
+          <div class="focus-card"><h3><span class="ic"></span>Sustainability in the built environment</h3><p>Circular materials, low-carbon design, life-cycle thinking and material efficiency.</p></div>
+          <div class="focus-card"><h3><span class="ic"></span>Project delivery &amp; coordination</h3><p>Cross-functional team leadership, quality control and design reviews across project phases.</p></div>
+          <div class="focus-card"><h3><span class="ic"></span>Analysis &amp; data</h3><p>FEM, parametric modelling, Python/Matlab and GIS-based spatial analysis.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="head" data-reveal><span class="num">02</span><h2>Experience</h2></div>
+      <div class="xp">
+        <div class="role" data-reveal>
+          <div><div class="when">04/2025 — Present</div><div class="org">Ingenieurbüro Prof. Dr. U. Freundt</div></div>
+          <div>
+            <h3>Structural Engineer <span style="font-size:15px;color:var(--muted)">(Part-time)</span></h3>
+            <ul>
+              <li>Assess existing bridges under revised load and usage assumptions, extending service life and avoiding the carbon and cost of premature replacement.</li>
+              <li>Develop strengthening and retrofitting concepts for concrete structures, prioritising material-efficient, low-impact solutions.</li>
+              <li>Apply Eurocode standards and specialist software to verify and document structural safety.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="role" data-reveal>
+          <div><div class="when">06/2024 — Present</div><div class="org">Bauhaus-Universität Weimar</div></div>
+          <div>
+            <h3>Research Associate</h3>
+            <ul>
+              <li>Lead micromechanical and multiscale modelling research on recycled concrete, advancing the viability of low-carbon, circular construction materials.</li>
+              <li>Develop semi-analytical and finite-element models to predict mechanical behaviour and durability.</li>
+              <li>Conduct in-depth analysis to improve the real-world application of recycled materials in construction.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="role" data-reveal>
+          <div><div class="when">04/2023 — 09/2023</div><div class="org">Buro Happold GmbH</div></div>
+          <div>
+            <h3>Structural Engineering Intern</h3>
+            <ul>
+              <li>Contributed to the design and analysis of concrete, steel and composite structures across early and mid project phases (LP1–LP4).</li>
+              <li>Performed preliminary design checks to optimise material usage and reduce project cost and embodied impact.</li>
+              <li>Carried out load calculations, static analyses and stability checks, and joined multidisciplinary design reviews.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="role" data-reveal>
+          <div><div class="when">11/2017 — 01/2021</div><div class="org">Ariosh Limited, Nigeria</div></div>
+          <div>
+            <h3>Civil Engineer</h3>
+            <ul>
+              <li>Led a team of six developing 3D models for oil &amp; gas platforms, managing workflow and quality.</li>
+              <li>Coordinated cross-functional teams across engineering, project management and commercial functions.</li>
+              <li>Performed quality checks against client specifications and improved project safety ratings by 60%.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK / RESEARCH -->
+  <section class="block" id="work">
+    <div class="wrap">
+      <div class="head" data-reveal><span class="num">03</span><h2>Selected research &amp; projects</h2></div>
+      <div class="work-grid stagger" data-reveal>
+        <div class="work-card">
+          <span class="big">01</span>
+          <span class="tag">Circularity · Research</span>
+          <h3>Recycled concrete — multiscale modelling</h3>
+          <p>Ongoing research advancing the structural performance and viability of recycled concrete as a low-carbon, circular construction material.</p>
+          <div class="tools"><span class="chip">FEM</span><span class="chip">Micromechanics</span><span class="chip">Material durability</span></div>
+        </div>
+        <div class="work-card">
+          <span class="big">02</span>
+          <span class="tag">Optimization · MSc Thesis</span>
+          <h3>Topology optimization for lightweight design</h3>
+          <p>Used topology optimization as a tool for lightweight structural design, with a focus on sustainability, material efficiency and design innovation.</p>
+          <div class="tools"><span class="chip">Grasshopper</span><span class="chip">Rhino</span><span class="chip">Parametric design</span></div>
+        </div>
+        <div class="work-card">
+          <span class="big">03</span>
+          <span class="tag">Structural Dynamics</span>
+          <h3>Buffeting analysis — Mersey Gate Bridge</h3>
+          <p>Wind-induced response analysis of a long-span bridge deck under turbulent flow, combining CFD with structural modelling.</p>
+          <div class="tools"><span class="chip">VxFlow CFD</span><span class="chip">SOFiSTiK</span><span class="chip">Matlab</span></div>
+        </div>
+        <div class="work-card">
+          <span class="big">04</span>
+          <span class="tag">Health Monitoring</span>
+          <h3>Modal analysis — steel truss bridge</h3>
+          <p>Dynamic and modal characterisation of a steel truss bridge to support structural health monitoring.</p>
+          <div class="tools"><span class="chip">RFEM</span><span class="chip">MACEC</span><span class="chip">AutoCAD</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="block" id="skills">
+    <div class="wrap">
+      <div class="head" data-reveal><span class="num">04</span><h2>Skills &amp; tools</h2></div>
+      <div class="skill-grid" data-reveal>
+        <div class="skill-row">
+          <div class="k">Sustainability &amp; optimization</div>
+          <div class="tags"><span class="chip">Recycled / low-carbon concrete</span><span class="chip">Topology optimization</span><span class="chip">Material efficiency</span><span class="chip">Parametric design</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="k">Project delivery</div>
+          <div class="tags"><span class="chip">Team leadership</span><span class="chip">Cross-functional coordination</span><span class="chip">Quality control</span><span class="chip">Design reviews</span><span class="chip">LP1–LP4</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="k">Analysis &amp; FEA software</div>
+          <div class="tags"><span class="chip">SOFiSTiK</span><span class="chip">Dlubal RFEM</span><span class="chip">FRILO</span><span class="chip">ANSYS</span><span class="chip">SAP2000</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="k">Modelling &amp; data</div>
+          <div class="tags"><span class="chip">AutoCAD</span><span class="chip">Revit</span><span class="chip">Rhino 7</span><span class="chip">Navisworks</span><span class="chip">Aveva E3D</span><span class="chip">GIS</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="k">Programming</div>
+          <div class="tags"><span class="chip">Python</span><span class="chip">Matlab</span><span class="chip">Grasshopper</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="k">Languages</div>
+          <div class="tags"><span class="chip">English — native</span><span class="chip">German — B1</span><span class="chip">Yoruba — mother tongue</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="block" id="credentials">
+    <div class="wrap">
+      <div class="head" data-reveal><span class="num">05</span><h2>Education &amp; credentials</h2></div>
+      <div class="cred-grid">
+        <div class="cred" data-reveal>
+          <h3 class="sub">Education</h3>
+          <div class="edu-item">
+            <div class="t">MSc Structural Engineering</div>
+            <div class="m">Bauhaus-Universität Weimar · Specialization: Natural Hazards &amp; Risk in Structural Engineering</div>
+            <div class="d">10/2021 — 03/2024</div>
+          </div>
+          <div class="edu-item">
+            <div class="t">B.Eng Civil Engineering</div>
+            <div class="m">Federal University Oye-Ekiti, Nigeria · GPA 4.20 / 5.00 (German equivalent 1.65)</div>
+            <div class="d">08/2012 — 09/2016</div>
+          </div>
+        </div>
+        <div class="cred" data-reveal>
+          <h3 class="sub">Training &amp; certifications</h3>
+          <div class="cert-item">
+            <div class="t">Structural Engineering in Germany</div>
+            <div class="m">Compact Course · IQ Netzwerk &amp; MFPA</div>
+            <div class="d">05/2025</div>
+          </div>
+          <div class="cert-item">
+            <div class="t">Energy Transition: Innovation for a Low-Carbon Future</div>
+            <div class="m">MOOC · Total IFP Institute, France</div>
+            <div class="d">05/2019</div>
+          </div>
+          <div class="awards">
+            <h3 class="sub" style="margin-top:14px">Awards &amp; scholarships</h3>
+            <div class="award"><span class="yr">2021</span><span>DAAD-EPOS Scholarship, Deutscher Akademischer Austauschdienst</span></div>
+            <div class="award"><span class="yr">2015</span><span>Lagos State Undergraduate Scholarship</span></div>
+            <div class="award"><span class="yr">2015</span><span>Award for Outstanding Students, Nigeria South-West Federal Universities</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="contact" data-reveal>
+        <svg class="contours" viewBox="0 0 1500 560" preserveAspectRatio="xMidYMid slice"><use href="#contourset"/></svg>
+        <span class="eyebrow">Let's talk</span>
+        <h2>Open to roles in<br><em>sustainability</em> &amp; engineering.</h2>
+        <p>Currently exploring junior to mid-level positions in sustainability, project management and structural engineering across Germany. I'd be glad to hear from you.</p>
+        <div class="contact-links">
+          <a class="clink solid" href="mailto:ahmed.shittu.0378@gmail.com">✉ Email me</a>
+          <a class="clink" href="tel:+4915906732500">☎ +49 159 06732500</a>
+          <a class="clink" href="#" id="linkedin-link">in · LinkedIn</a>
+          <a class="clink" href="Ahmed_Shittu_CV.pdf" download>↧ Download CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <div class="fn">Ahmed Shittu</div>
+  <div class="fm">Civil &amp; Structural Engineer · Sustainability · © 2026</div>
+</footer>
+
+<script>
+  // mobile nav
+  var burger=document.getElementById('burger'),links=document.getElementById('navlinks');
+  burger.addEventListener('click',function(){links.classList.toggle('open')});
+  links.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){links.classList.remove('open')})});
+
+  // reveal on scroll
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.14});
+  document.querySelectorAll('[data-reveal],.stagger').forEach(function(el){io.observe(el)});
+
+  // hero loads immediately
+  window.addEventListener('load',function(){
+    document.getElementById('herotext').classList.add('in');
+    document.getElementById('herofacts').classList.add('in');
+  });
+  setTimeout(function(){
+    document.getElementById('herotext').classList.add('in');
+    document.getElementById('herofacts').classList.add('in');
+  },120);
+</script>
+</body>
+</html>
